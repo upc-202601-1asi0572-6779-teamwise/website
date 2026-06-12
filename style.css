@@ -349,64 +349,91 @@ animation: float 3s ease-in-out infinite;
 
 
 /* ============================
-       ALERT LEVELS INDICATOR
-    ============================ */
-    .alert-levels { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
-    .level-badge {
-      display: flex; align-items: center; gap: 6px;
-      font-family: var(--font-display); font-size: .72rem; font-weight: 700;
-      letter-spacing: .04em; padding: 5px 12px; border-radius: 100px;
-    }
-    .level-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
-    .level-badge.info  { background: rgba(14,165,184,.1); color: var(--teal-500); }
-    .level-badge.info  .dot { background: var(--teal-500); }
-    .level-badge.warn  { background: rgba(245,158,11,.1); color: var(--amber-500); }
-    .level-badge.warn  .dot { background: var(--amber-500); }
-    .level-badge.crit  { background: rgba(239,68,68,.1);  color: var(--red-500);   }
-    .level-badge.crit  .dot { background: var(--red-500); }
+   ALERT LEVELS INDICATOR
+============================ */
+.alert-levels { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.level-badge {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-display); font-size: .72rem; font-weight: 700;
+  letter-spacing: .04em; padding: 5px 12px; border-radius: 100px;
+}
+.level-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
+.level-badge.info  { background: rgba(14,165,184,.1); color: var(--teal-500); }
+.level-badge.info  .dot { background: var(--teal-500); }
+.level-badge.warn  { background: rgba(245,158,11,.1); color: var(--amber-500); }
+.level-badge.warn  .dot { background: var(--amber-500); }
+.level-badge.crit  { background: rgba(239,68,68,.1);  color: var(--red-500);   }
+.level-badge.crit  .dot { background: var(--red-500); }
 
-    /* ============================
-       SCROLL ANIMATIONS
-    ============================ */
-    [data-animate] { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-    [data-animate].visible { opacity: 1; transform: translateY(0); }
+/* ============================
+   SCROLL ANIMATIONS
+============================ */
+[data-animate] { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+[data-animate].visible { opacity: 1; transform: translateY(0); }
 
-    /* ============================
-       RESPONSIVE
-    ============================ */
-    @media (max-width: 900px) {
-      .hero-inner       { grid-template-columns: 1fr; gap: 48px; }
-      .hero-visual      { display: none; }
-      .about-grid       { grid-template-columns: 1fr; }
-      .segments-grid    { grid-template-columns: 1fr; }
-      .pricing-grid     { grid-template-columns: 1fr; }
-      .team-grid        { grid-template-columns: repeat(2,1fr); }
-      .footer-grid      { grid-template-columns: 1fr 1fr; }
-      .nav-links        { display: none; }
-      .nav-hamburger    { display: flex; }
-    }
-    @media (max-width: 600px) {
-      .section { padding: 64px 0; }
-      h2 { font-size: 1.75rem; }
-      .team-grid   { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 900px) {
+  .hero-inner       { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual      { display: none; }
+  .about-grid       { grid-template-columns: 1fr; }
+  .segments-grid    { grid-template-columns: 1fr; }
+  .pricing-grid     { grid-template-columns: 1fr; }
+  .team-grid        { grid-template-columns: repeat(2,1fr); }
+  .footer-grid      { grid-template-columns: 1fr 1fr; }
+  .nav-links        { display: none; }
+  .nav-hamburger    { display: flex; }
+}
+@media (max-width: 600px) {
+  .section { padding: 64px 0; }
+  h2 { font-size: 1.75rem; }
+  .team-grid   { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
 
-    /* ============================
-       MOBILE NAV OVERLAY
-    ============================ */
-    .mobile-nav {
-      display: none; position: fixed; inset: 0; z-index: 2000;
-      background: rgba(13,51,32,.97); flex-direction: column;
-      align-items: center; justify-content: center; gap: 28px;
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
-      color: var(--white); transition: color var(--transition);
-    }
-    .mobile-nav a:hover { color: var(--green-400); }
-    .mobile-nav-close {
-      position: absolute; top: 24px; right: 24px;
-      font-size: 2rem; color: var(--white); cursor: pointer; background: none; border: none;
-    }
+
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-800); border-radius: 2px; transition: all var(--transition); }
+
+/* ============================
+   BENEFITS / FEATURES
+============================ */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; margin-top: 56px; }
+.feature-card {
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--green-200); }
+.feature-icon {
+  width: 52px; height: 52px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.feature-icon.green  { background: var(--green-50); }
+.feature-icon.teal   { background: var(--teal-100); }
+.feature-icon.amber  { background: #fef9e7; }
+.feature-icon.red    { background: #fef2f2; }
+.feature-icon svg { width: 26px; height: 26px; }
+.feature-card h3 { color: var(--green-900); margin-bottom: 10px; }
+
+/* ============================
+   MOBILE NAV OVERLAY
+============================ */
+.mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(13,51,32,.97); flex-direction: column;
+  align-items: center; justify-content: center; gap: 28px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+  color: var(--white); transition: color var(--transition);
+}
+.mobile-nav a:hover { color: var(--green-400); }
+.mobile-nav-close {
+  position: absolute; top: 24px; right: 24px;
+  font-size: 2rem; color: var(--white); cursor: pointer; background: none; border: none;
+}
