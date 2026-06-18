@@ -1,559 +1,534 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="es" data-lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartPalm by TempWise – Precision Agriculture for Amazon Palm Oil</title>
-  <meta name="description" content="SmartPalm is an IoT solution by TempWise for intelligent palm oil crop monitoring in the Peruvian Amazon. Edge computing, LoRaWAN, and AI-powered agronomic recommendations – no internet required." />
-  <meta name="keywords" content="SmartPalm, TempWise, IoT agriculture, precision farming, palm oil, Peruvian Amazon, LoRaWAN, edge computing, INIA, agtech, smart sensors, palma aceitera, agricultura de precisión" />
-  <meta name="author" content="TempWise – UPC Software Engineering" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" /> -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartPalm – Cuida tu palma, protege tu ingreso</title>
+  <meta name="description" content="SmartPalm te alerta cuando tu palma necesita atención, aunque estés en medio de la Amazonía sin internet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- ============================
+
+<!-- ============================
      HEADER
 ============================ -->
-<header class="header" id="mainHeader" role="banner">
+<header class="header" id="mainHeader">
   <div class="container">
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#" class="logo" aria-label="SmartPalm – TempWise Home">
-        <div class="logo-icon" aria-hidden="true">
-          <!-- Leaf icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22C12 22 3 17 3 10a9 9 0 0 1 18 0c0 7-9 12-9 12z"/>
-            <path d="M12 22V10"/>
-          </svg>
-        </div>
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🌴</div>
         SmartPalm
       </a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="#benefits" data-i18n="nav.benefits">Benefits</a></li>
-        <li><a href="#segments" data-i18n="nav.segments">Segments</a></li>
-        <li><a href="#pricing"  data-i18n="nav.pricing">Pricing</a></li>
-        <li><a href="#team"     data-i18n="nav.team">Team</a></li>
+      <span class="page-badge badge-green">🌴 Para Agricultores</span>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="agronomo.html">Agrónomo</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button class="lang-toggle" onclick="toggleLang()" aria-label="Toggle language" id="langBtn">
-          <span>🌐</span> <span id="langLabel">ES</span>
-        </button>
-        <button class="btn-login" aria-label="Login to SmartPalm Dashboard" data-i18n="nav.login">Login</button>
-        <div class="nav-hamburger" onclick="openMobileNav()" aria-label="Open menu" role="button" tabindex="0">
-          <span></span><span></span><span></span>
+        <div class="lang-toggle" id="langToggle" onclick="toggleLang()">
+          <div class="lang-slider"></div>
+          <span class="lang-opt active" data-lang="es">ES</span>
+          <span class="lang-opt" data-lang="en">EN</span>
         </div>
+        <a href="#" class="btn btn-primary" data-i18n="nav.cta">Descargar App</a>
+      </div>
+
+      <div class="nav-hamburger" onclick="openMobileNav()">
+        <span></span><span></span><span></span>
       </div>
     </nav>
   </div>
 </header>
 
-
-
-<main id="main-content">
-  <!-- ============================    
-     HERO SECTION
+<!-- ============================
+     MOBILE NAV
 ============================ -->
-  <section class="hero" aria-labelledby="hero-heading">
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">×</button>
+  <a href="#inicio" onclick="closeMobileNav()">Inicio</a>
+  <a href="#problema" onclick="closeMobileNav()">Problema</a>
+  <a href="#como-funciona" onclick="closeMobileNav()">Cómo funciona</a>
+  <a href="#beneficios" onclick="closeMobileNav()">Beneficios</a>
+  <a href="#planes" onclick="closeMobileNav()">Planes</a>
+  <a href="#nosotros" onclick="closeMobileNav()">Nosotros</a>
+  <a href="agronomo.html">Agrónomo</a>
+  <a href="#" class="btn btn-primary">Descargar App</a>
+</div>
+
+<main>
+  <!-- ============================
+       HERO SECTION
+  ============================ -->
+  <section class="hero" id="inicio">
     <div class="container">
       <div class="hero-inner">
-
-        <!-- Hero Copy -->
-        <div class="hero-copy">
-          <div class="hero-eyebrow">
-            <span class="badge" aria-label="Product category">🌿 AgTech · IoT · Amazonía</span>
-          </div>
-          <h1 class="hero-title" id="hero-heading" data-i18n="hero.title">
-            Revolutionize <em>palm oil</em> farming in the Amazon
-          </h1>
+        <div class="hero-content">
+          <span class="badge" data-i18n="agro.hero.badge">🌴 Para dueños de cultivos de palma</span>
+          <h1 class="hero-title" data-i18n="agro.hero.title">Monitorea tu palma desde tu celular</h1>
+          <p class="hero-subtitle" data-i18n="agro.hero.subtitle">Recibe alertas cuando tu cultivo necesite atención. Sin internet, sin complicaciones.</p>
 
           <div class="hero-ctas">
-            <!-- CTA Segment 1: Palm Grower -->
-            <a href="#" class="btn btn-amber" aria-label="Download SmartPalm mobile app" data-i18n="hero.cta.grower">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-              <span data-i18n="hero.cta.grower">Download App</span>
-            </a>
-            <!-- CTA Segment 2: Agronomist -->
-            <a href="#" class="btn btn-outline" aria-label="Access SmartPalm web platform dashboard" data-i18n="hero.cta.agronomist">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              <span data-i18n="hero.cta.agronomist">Web Dashboard</span>
-            </a>
+            <a href="#" class="btn btn-amber btn-lg" data-i18n="agro.hero.cta.primary">📱 Descargar App</a>
+            <a href="#como-funciona" class="link-light" data-i18n="agro.hero.cta.secondary">Ver cómo funciona ↓</a>
           </div>
+          <p class="hero-agronomist-link">
+            <span class="agronomist-question" data-i18n="agro.hero.agronomist.question">¿Eres ingeniero agrónomo?</span>
+            <a href="agronomo.html" class="agronomist-dashboard-link" data-i18n="agro.hero.agronomist.link">Tenemos una oferta para ti →</a>
+          </p>
         </div>
 
-        <!--
-                <p class="hero-subtitle" data-i18n="hero.subtitle">
-                  SmartPalm delivers real-time agronomic intelligence directly to your farm — no internet required. Edge computing + LoRaWAN + AI calibrated with INIA parameters.
-                </p> -->
-
-
-        <!--         <div class="hero-stats" role="region" aria-label="Key statistics">
-                  <div class="stat-item">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label" data-i18n="hero.stat1">Uptime offline</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-number">30</span>
-                    <span class="stat-label" data-i18n="hero.stat2">Day free trial</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-number">&lt;2s</span>
-                    <span class="stat-label" data-i18n="hero.stat3">Alert latency</span>
-                  </div>
-                </div> -->
-
-        <!-- Hero Visual: Dashboard Mockup -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="dashboard-mockup">
-            <div class="mockup-header">
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-              <span class="mockup-title">SmartPalm Dashboard</span>
-            </div>
-            <div class="mockup-stats-row">
-              <div class="mockup-stat">
-                <div class="mockup-stat-label">Humidity</div>
-                <div class="mockup-stat-value ok">78%</div>
-              </div>
-              <div class="mockup-stat">
-                <div class="mockup-stat-label">Temp</div>
-                <div class="mockup-stat-value warn">34°C</div>
-              </div>
-              <div class="mockup-stat">
-                <div class="mockup-stat-label">pH Soil</div>
-                <div class="mockup-stat-value ok">6.4</div>
+        <div class="hero-visual">
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="phone-alert">
+                  <div class="alert-icon">⚠️</div>
+                  <div class="alert-title" data-i18n="phone.alert.title">Tu palma necesita agua</div>
+                  <div class="alert-location" data-i18n="phone.alert.location">Bloque C</div>
+                  <div class="alert-time" data-i18n="phone.alert.time">Hace 5 minutos</div>
+                </div>
+                <div class="phone-nav">
+                  <span>🏠</span>
+                  <span>📊</span>
+                  <span>🔔</span>
+                  <span>👤</span>
+                </div>
               </div>
             </div>
-            <div class="mockup-cha  rt">
-              <div class="chart-bar" style="height:40%"></div>
-              <div class="chart-bar" style="height:65%"></div>
-              <div class="chart-bar" style="height:50%"></div>
-              <div class="chart-bar" style="height:80%"></div>
-              <div class="chart-bar" style="height:70%"></div>
-              <div class="chart-bar" style="height:55%"></div>
-              <div class="chart-bar" style="height:90%"></div>
-              <div class="chart-bar" style="height:72%"></div>
-              <div class="chart-bar" style="height:60%"></div>
-              <div class="chart-bar" style="height:85%"></div>
-            </div>
-            <div class="mockup-alerts">
-              <div class="mockup-alert">
-                <div class="alert-dot crit"></div>
-                <span class="alert-text">Water stress – Block C critical</span>
-                <span class="alert-time">2m ago</span>
-              </div>
-              <div class="mockup-alert">
-                <div class="alert-dot warn"></div>
-                <span class="alert-text">Leaf miner detected – Block A</span>
-                <span class="alert-time">18m ago</span>
-              </div>
-              <div class="mockup-alert">
-                <div class="alert-dot info"></div>
-                <span class="alert-text">Sync complete – 14 nodes OK</span>
-                <span class="alert-time">1h ago</span>
-              </div>
-            </div>
+            <div class="phone-label" data-i18n="phone.label">Vista de la App SmartPalm</div>
           </div>
-          <div class="float-badge">✓ No Internet Needed</div>
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- ============================
+       PROBLEM SECTION
+  ============================ -->
+  <section class="section section-alt" id="problema">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 data-i18n="agro.problem.title">Sabemos lo difícil que es cultivar palma en la Amazonía</h2>
+      </div>
 
+      <div class="problem-grid" role="list">
+        <article class="problem-card" role="listitem" data-animate>
+          <div class="problem-icon problem-icon-orange">⚠️</div>
+          <h3 data-i18n="agro.problem.card1.title">No sabes cuándo tu palma necesita agua</h3>
+          <p data-i18n="agro.problem.card1.desc">El estrés hídrico puede destruir tu cosecha si no lo detectas a tiempo.</p>
+        </article>
 
-<!-- ============================
-     ABOUT THE PRODUCT (VIDEO)
-============================ -->
-<section class="section" id="about" aria-labelledby="about-heading">
-  <div class="container">
-    <div class="about-grid">
+        <article class="problem-card" role="listitem" data-animate>
+          <div class="problem-icon problem-icon-red">🐛</div>
+          <h3 data-i18n="agro.problem.card2.title">Las plagas llegan sin aviso</h3>
+          <p data-i18n="agro.problem.card2.desc">Sin monitoreo constante, una plaga puede afectar todo tu bloque en pocos días.</p>
+        </article>
 
-      <!-- Video -->
-      <div data-animate>
-        <p class="section-label" data-i18n="about.label">About the Product</p>
-        <h2 id="about-heading" data-i18n="about.title">Precision agriculture, even without signal</h2>
-        <p style="margin:16px 0 24px" data-i18n="about.desc">See how SmartPalm nodes collect soil, climate, and phytosanitary data in real time — syncing via LoRaWAN mesh and processing everything at the edge, so farmers always have actionable insights.</p>
-        <div class="alert-levels" aria-label="Alert levels">
-          <div class="level-badge info"><div class="dot"></div><span data-i18n="alert.info">Informational</span></div>
-          <div class="level-badge warn"><div class="dot"></div><span data-i18n="alert.warn">Warning</span></div>
-          <div class="level-badge crit"><div class="dot"></div><span data-i18n="alert.crit">Critical</span></div>
+        <article class="problem-card" role="listitem" data-animate>
+          <div class="problem-icon problem-icon-amber">🔧</div>
+          <h3 data-i18n="agro.problem.card3.title">Configura tus propias alarmas</h3>
+          <p data-i18n="agro.problem.card3.desc">Personaliza los thresholds de riesgo según las necesidades de tu cultivo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       HOW IT WORKS SECTION
+  ============================ -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 data-i18n="agro.how.title">Así funciona SmartPalm</h2>
+      </div>
+
+      <div class="steps-grid" role="list">
+        <article class="step-card" role="listitem" data-animate>
+          <div class="step-number">1</div>
+          <div class="step-icon step-icon-green">📡</div>
+          <h3 data-i18n="agro.how.step1.title">Sensores en tu campo</h3>
+          <p data-i18n="agro.how.step1.desc">Pequeños dispositivos miden humedad y temperatura del suelo</p>
+        </article>
+
+        <article class="step-card" role="listitem" data-animate>
+          <div class="step-number">2</div>
+          <div class="step-icon step-icon-amber">📱</div>
+          <h3 data-i18n="agro.how.step2.title">Tu celular recibe los datos</h3>
+          <p data-i18n="agro.how.step2.desc">Aunque no tengas internet ni señal celular</p>
+        </article>
+
+        <article class="step-card" role="listitem" data-animate>
+          <div class="step-number">3</div>
+          <div class="step-icon step-icon-green">🔔</div>
+          <h3 data-i18n="agro.how.step3.title">Recibe alertas a tiempo</h3>
+          <p data-i18n="agro.how.step3.desc">Sabrás exactamente cuándo actuar para cuidar tu palma</p>
+        </article>
+      </div>
+
+      <div class="steps-cta" data-animate>
+        <a href="#planes" class="btn btn-secondary" data-i18n="agro.how.cta">Prueba 30 días gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       VIDEO SECTION
+  ============================ -->
+  <section class="section section-alt" id="video">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 data-i18n="agro.video.title">Mira cómo SmartPalm ayuda a productores como tú</h2>
+      </div>
+
+      <div class="video-section" data-animate>
+        <div class="video-placeholder video-placeholder-lg" role="img" aria-label="Video demostrativo para agricultores">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7L8 5z"/></svg>
+          <p>🎥 <span data-i18n="agro.video.placeholder">Video: SmartPalm para Agricultores</span></p>
+          <small data-i18n="video.hint">Click para reproducir</small>
         </div>
       </div>
 
-      <!-- Video embed -->
-      <div data-animate>
-        <div class="video-container" aria-label="SmartPalm product demo video">
-          <!--
-            =============================================
-            PRODUCT VIDEO PLACEHOLDER
-            Replace the div below with an <iframe> from
-            YouTube or Microsoft Stream, for example:
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                    title="SmartPalm Product Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            =============================================
-          -->
-          <div class="video-placeholder" role="img" aria-label="Product demo video placeholder">
-            <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z"/></svg>
-            <p>📹 <span data-i18n="video.product.placeholder">SmartPalm Product Demo Video</span><br/><small>Insert YouTube/Stream iframe here</small></p>
+      <div class="video-cta" data-animate>
+        <a href="#" class="btn btn-amber btn-lg" data-i18n="agro.video.cta">📱 Descargar App</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       BENEFITS SECTION
+  ============================ -->
+  <section class="section" id="beneficios">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 data-i18n="agro.benefits.title">Todo lo que necesitas para cuidar tu palma</h2>
+        <!-- <p class="section-subtitle" data-i18n="agro.benefits.subtitle">Simple, sin internet, en tu idioma</p> -->
+      </div>
+
+      <div class="benefits-grid" role="list">
+        <article class="benefit-card" role="listitem" data-animate>
+          <div class="benefit-icon benefit-icon-teal">📱</div>
+          <h3 data-i18n="agro.benefits.card1.title">App móvil intuitiva</h3>
+          <p data-i18n="agro.benefits.card1.desc">Diseñada para cualquier agricultor. Monitorea tu palma desde tu celular sin complicaciones.</p>
+        </article>
+
+        <article class="benefit-card" role="listitem" data-animate>
+          <div class="benefit-icon benefit-icon-amber">🔔</div>
+          <h3 data-i18n="agro.benefits.card2.title">Alertas claras</h3>
+          <p data-i18n="agro.benefits.card2.desc">Sabrás exactamente qué hacer, no solo que hay un problema. Como "Riega el Bloque C ahora".</p>
+        </article>
+
+        <article class="benefit-card" role="listitem" data-animate>
+          <div class="benefit-icon benefit-icon-green">🌱</div>
+          <h3 data-i18n="agro.benefits.card3.title">Recomendaciones del INIA</h3>
+          <p data-i18n="agro.benefits.card3.desc">Consejos que cualquier persona puede entender, basados en investigación real.</p>
+        </article>
+
+        <article class="benefit-card" role="listitem" data-animate>
+          <div class="benefit-icon benefit-icon-teal">📊</div>
+          <h3 data-i18n="agro.benefits.card4.title">Reportes simples</h3>
+          <p data-i18n="agro.benefits.card4.desc">Genera reportes semanales de tu fundo. Descárgalos en PDF en segundos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PRICING SECTION
+  ============================ -->
+  <section class="section section-alt" id="planes">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 data-i18n="agro.pricing.title">Planes según el tamaño de tu fundo</h2>
+        <p class="section-subtitle" data-i18n="agro.pricing.subtitle">Todos incluyen 30 días de prueba gratis</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card" data-animate>
+          <div class="plan-name">🌱 Semilla</div>
+          <div class="plan-price">S/. 149 <span data-i18n="pricing.permonth">/mes</span></div>
+          <div class="plan-tag" data-i18n="agro.pricing.plan1.tag">Hasta 10 hectáreas</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features" role="list">
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan1.f1">App en tu celular</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan1.f2">Hasta 5 sensores</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan1.f3">Alertas de agua y plagas</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan1.f4">Reportes básicos</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan1.f5">Recomendaciones INIA</span></li>
+          </ul>
+          <a href="#" class="btn btn-secondary btn-block" data-i18n="pricing.cta.trial">Iniciar prueba gratis</a>
+        </article>
+
+        <article class="pricing-card pricing-card-featured" data-animate>
+          <div class="popular-badge" data-i18n="agro.pricing.plan2.badge">⭐ Más popular</div>
+          <div class="plan-name">🌾 Cosecha</div>
+          <div class="plan-price">S/. 349 <span data-i18n="pricing.permonth">/mes</span></div>
+          <div class="plan-tag" data-i18n="agro.pricing.plan2.tag">10 a 50 hectáreas</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features" role="list">
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan2.f1">Todo lo de Semilla</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan2.f2">Hasta 20 sensores</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan2.f3">Alertas por SMS</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan2.f4">Reportes semanales</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan2.f5">Gestión por bloques</span></li>
+            <li><span class="check">✓</span> <span data-i18n="agro.pricing.plan2.f6">Acceso para tu asesor</span></li>
+          </ul>
+          <div class="plan-note" data-i18n="agro.pricing.plan2.note">📱 Incluye acceso gratuito para 1 asesor técnico</div>
+          <a href="#" class="btn btn-primary btn-block" data-i18n="pricing.cta.trial">Iniciar prueba gratis</a>
+        </article>
+      </div>
+
+      <p class="pricing-contact" data-animate>
+        <span data-i18n="agro.pricing.contact">50+ hectáreas?</span> <a href="#" onclick="openSalesModal(); return false;" data-i18n="agro.pricing.contact.link">Contactar ventas →</a>
+      </p>
+
+      <div class="pricing-table-wrapper" data-animate>
+        <table class="pricing-table">
+          <thead>
+          <tr>
+            <th data-i18n="pricing.table.feature">Característica</th>
+            <th data-i18n="pricing.table.plan1">Semilla</th>
+            <th data-i18n="pricing.table.plan2">Cosecha</th>
+            <th data-i18n="pricing.table.plan3">Palma Pro</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td data-i18n="pricing.table.price">Precio</td>
+            <td>S/. 149</td>
+            <td>S/. 349</td>
+            <td data-i18n="pricing.table.custom">A medida</td>
+          </tr>
+          <tr>
+            <td data-i18n="pricing.table.hectares">Hectáreas</td>
+            <td data-i18n="pricing.table.upto10">Hasta 10</td>
+            <td>10-50</td>
+            <td data-i18n="pricing.table.unlimited">50+</td>
+          </tr>
+          <tr>
+            <td data-i18n="pricing.table.sensors">Sensores</td>
+            <td>5</td>
+            <td>20</td>
+            <td data-i18n="pricing.table.unlimited">Ilimitados</td>
+          </tr>
+          <tr>
+            <td data-i18n="pricing.table.app">App móvil</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td data-i18n="pricing.table.sms">Alertas SMS</td>
+            <td>-</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td data-i18n="pricing.table.advisor">Asesor técnico</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✓</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CTA BANNER - PARA AGRÓNOMOS
+  ============================ -->
+  <section class="section agronomist-banner">
+    <div class="container">
+      <div class="agronomist-banner-inner">
+        <div class="agronomist-banner-content">
+          <span class="agronomist-banner-icon">🔬</span>
+          <div>
+            <h3>¿Trabajas con productores de palma?</h3>
+            <p>Accede al dashboard profesional para agrónomos con alertas priorizadas y reportes automáticos.</p>
           </div>
         </div>
+        <a href="agronomo.html" class="btn btn-outline-teal">Dashboard para agrónomos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       ABOUT THE TEAM SECTION
+  ============================ -->
+  <section class="section section-alt" id="nosotros">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 data-i18n="team.title">Conoce al equipo detrás de SmartPalm</h2>
+        <p class="section-subtitle" data-i18n="team.subtitle">Somos estudiantes de la UPC apasionados por resolver problemas reales del campo peruano</p>
       </div>
 
-    </div>
-  </div>
-</section>
-  
-<!-- ============================
-     BENEFITS / FEATURES
-============================ -->
-<section class="section section-alt" id="benefits" aria-labelledby="benefits-heading">
-  <div class="container">
-    <div style="text-align:center; max-width:640px; margin:0 auto;" data-animate>
-      <p class="section-label" data-i18n="benefits.label">Key Benefits</p>
-      <h2 id="benefits-heading" data-i18n="benefits.title">Everything your farm needs, built for the Amazon</h2>
-      <p data-i18n="benefits.desc">Four pillars that make SmartPalm the most reliable agronomic intelligence platform for tropical palm oil cultivation.</p>
-    </div>
-
-    <div class="features-grid" role="list">
-
-      <article class="feature-card" role="listitem" data-animate>
-        <div class="feature-icon green" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round">
-            <path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/>
-            <path d="M4.93 4.93 12 12l4-4"/>
-          </svg>
+      <div class="video-section" data-animate>
+        <div class="video-placeholder" role="img" aria-label="Video de presentación del equipo">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7L8 5z"/></svg>
+          <p>🎥 <span data-i18n="video.team.placeholder">Video: About the Team - TempWise</span></p>
+          <small data-i18n="video.team.hint">Click para reproducir</small>
         </div>
-        <h3 data-i18n="feat1.title">100% Offline Operation</h3>
-        <p data-i18n="feat1.desc">Edge computing + LoRaWAN mesh means your nodes collect and process data locally. No mobile signal, no Wi-Fi, no problem — intelligence lives at the farm, not in the cloud.</p>
-      </article>
+      </div>
 
-      <article class="feature-card" role="listitem" data-animate>
-        <div class="feature-icon red" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--red-500)" stroke-width="2" stroke-linecap="round">
-            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
-          </svg>
+      <div class="team-grid" data-animate>
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/victor.jpg" alt="Victor Rojas">
+          </div>
+          <h4 class="team-name">Victor Rojas</h4>
+          <p class="team-role">Ingeniero de Software - UPC</p>
         </div>
-        <h3 data-i18n="feat2.title">Critical Real-Time Alerts</h3>
-        <p data-i18n="feat2.desc">Three-tier alert system (Informational → Warning → Critical) for water stress, phytosanitary events, and extreme weather. Get notified under 2 seconds via mobile notification.</p>
-      </article>
-
-      <article class="feature-card" role="listitem" data-animate>
-        <div class="feature-icon teal" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-          </svg>
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/renso.png" alt="Renso Julca">
+          </div>
+          <h4 class="team-name">Renso Julca</h4>
+          <p class="team-role">Ingeniero de Software - UPC</p>
         </div>
-        <h3 data-i18n="feat3.title">AI + INIA Parameters</h3>
-        <p data-i18n="feat3.desc">Our agronomic engine is calibrated with INIA's research data for Amazonian palm oil varieties — delivering recommendations aligned with Peru's best agricultural science.</p>
-      </article>
-
-      <article class="feature-card" role="listitem" data-animate>
-        <div class="feature-icon amber" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber-500)" stroke-width="2" stroke-linecap="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-          </svg>
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/jeremy.jpeg" alt="Jeremy Paucar">
+          </div>
+          <h4 class="team-name">Jeremy Paucar</h4>
+          <p class="team-role">Ingeniero de Software - UPC</p>
         </div>
-        <h3 data-i18n="feat4.title">Exportable Technical Reports</h3>
-        <p data-i18n="feat4.desc">Generate PDF and CSV agronomic reports per block, per period, or per node — ready to share with cooperatives, certifying bodies, or financial institutions.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     SEGMENTS
-============================ -->
-<section class="section" id="segments" aria-labelledby="segments-heading">
-  <div class="container">
-    <div style="text-align:center; max-width:620px; margin:0 auto;" data-animate>
-      <p class="section-label" data-i18n="seg.label">Who is SmartPalm for?</p>
-      <h2 id="segments-heading" data-i18n="seg.title">Built for two critical players in the value chain</h2>
-    </div>
-
-    <div class="segments-grid" role="list">
-
-      <!-- Segment 1: Palm Grower -->
-      <article class="segment-card grower" role="listitem" data-animate aria-labelledby="grower-heading">
-        <div class="segment-tag" data-i18n="seg.grower.tag">🌴 Palm Grower / Agricultor</div>
-        <h3 id="grower-heading" data-i18n="seg.grower.title">Manage your plantation from your phone, no internet needed</h3>
-        <p data-i18n="seg.grower.desc">Designed for farmers in remote Amazonian areas with limited connectivity. Get alerts, recommendations, and crop health status directly on your mobile device via SmartPalm App.</p>
-        <ul class="segment-perks" role="list">
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.grower.p1">Simple interface, works without WiFi or 4G</span></li>
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.grower.p2">Push alerts for pests, irrigation, and fertilization</span></li>
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.grower.p3">Available in Spanish for Amazonian communities</span></li>
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.grower.p4">Long-range sensors cover up to 15 km per gateway</span></li>
-        </ul>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="#" class="btn btn-amber" aria-label="Download SmartPalm app from App Store">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            <span data-i18n="seg.grower.cta">Download App</span>
-          </a>
-          <a href="#" class="btn btn-outline" aria-label="Download SmartPalm app from Google Play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m3.18 23.76 10.35-10.35L3.18.24C2.47.57 2 1.29 2 2.14v19.72c0 .85.47 1.57 1.18 1.9zm12.09-12.09L4.56 22.38l9.39-5.43 1.32-5.28zM21.22 10l-2.74-1.59-2.24 2.24 2.24 2.24L21.22 11c.79-.46.79-1.54 0-1z"/></svg>
-            <span>Google Play</span>
-          </a>
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/renzo.jpeg" alt="Renzo Loli">
+          </div>
+          <h4 class="team-name">Renzo Loli</h4>
+          <p class="team-role">Ingeniero de Software - UPC</p>
         </div>
-      </article>
-
-      <!-- Segment 2: Agronomist -->
-      <article class="segment-card agronomist" role="listitem" data-animate aria-labelledby="agro-heading">
-        <div class="segment-tag" data-i18n="seg.agro.tag">🔬 Agronomist / Ingeniero Agrónomo</div>
-        <h3 id="agro-heading" data-i18n="seg.agro.title">Monitor and manage multiple plantations from one dashboard</h3>
-        <p data-i18n="seg.agro.desc">A professional web platform for agronomic consultants overseeing multiple clients and farms. Advanced analytics, report generation, and multi-site sensor management.</p>
-        <ul class="segment-perks" role="list">
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.agro.p1">Multi-farm, multi-client portfolio management</span></li>
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.agro.p2">Advanced charts: NDVI trends, soil moisture maps</span></li>
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.agro.p3">Exportable PDF/CSV technical reports</span></li>
-          <li><div class="perk-check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><span data-i18n="seg.agro.p4">Agronomic AI recommendations with INIA calibration</span></li>
-        </ul>
-        <a href="#" class="btn btn-teal" aria-label="Access SmartPalm web dashboard for agronomists">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span data-i18n="seg.agro.cta">Access Web Platform</span>
-        </a>
-      </article>
-
-    </div>
-  </div>
-</section>
-<!-- ============================
-     PRICING
-============================ -->
-<section class="section section-alt" id="pricing" aria-labelledby="pricing-heading">
-  <div class="container">
-    <div style="text-align:center; max-width:600px; margin:0 auto;" data-animate>
-      <p class="section-label" data-i18n="pricing.label">Pricing Plans</p>
-      <h2 id="pricing-heading" data-i18n="pricing.title">Transparent pricing for every farm size</h2>
-      <p data-i18n="pricing.desc">No free tier — but every plan includes a <strong>30-day free trial</strong> with no credit card required. Cancel anytime.</p>
-    </div>
-
-    <div class="pricing-grid" role="list" aria-label="Pricing plans">
-
-      <!-- Plan Semilla -->
-      <article class="pricing-card" role="listitem" data-animate aria-labelledby="plan-semilla">
-        <div class="plan-name" id="plan-semilla" data-i18n="plan1.name">🌱 Semilla</div>
-        <div class="plan-price">S/. 149 <span data-i18n="plan.permonth">/month</span></div>
-        <div class="plan-hectares" data-i18n="plan1.ha">Up to 10 hectares</div>
-        <div class="plan-trial">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span data-i18n="plan.trial">30-day free trial</span>
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/javier.jpg" alt="Javier Tello">
+          </div>
+          <h4 class="team-name">Javier Tello</h4>
+          <p class="team-role">Ingeniero de Software - UPC</p>
         </div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features" role="list">
-          <li aria-label="Up to 5 IoT nodes"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f1">Up to 5 IoT sensor nodes</span></li>
-          <li aria-label="Mobile app access"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f2">SmartPalm mobile app</span></li>
-          <li aria-label="Real-time alerts"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f3">Real-time push alerts</span></li>
-          <li aria-label="Monthly basic reports"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f4">Monthly basic reports</span></li>
-          <li aria-label="INIA AI recommendations"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f5">INIA AI recommendations</span></li>
-        </ul>
-        <a href="#" class="btn btn-secondary" style="width:100%; justify-content:center;" data-i18n="plan.cta.trial">Start Free Trial</a>
-      </article>
-
-      <!-- Plan Cosecha (FEATURED) -->
-      <article class="pricing-card featured" role="listitem" data-animate aria-labelledby="plan-cosecha">
-        <div class="popular-badge" data-i18n="plan2.popular">Most Popular</div>
-        <div class="plan-name" id="plan-cosecha" data-i18n="plan2.name">🌾 Cosecha</div>
-        <div class="plan-price">S/. 349 <span data-i18n="plan.permonth">/month</span></div>
-        <div class="plan-hectares" data-i18n="plan2.ha">10 – 50 hectares</div>
-        <div class="plan-trial">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span data-i18n="plan.trial">30-day free trial</span>
-        </div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features" role="list">
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f1">Up to 20 IoT sensor nodes</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f2">Mobile app + Web dashboard</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f3">Critical & warning alerts with SMS</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f4">Weekly exportable PDF/CSV reports</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f5">Multi-block management</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f6">Agronomist portal access</span></li>
-        </ul>
-        <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;" data-i18n="plan.cta.trial">Start Free Trial</a>
-      </article>
-
-      <!-- Plan Palma Pro -->
-      <article class="pricing-card" role="listitem" data-animate aria-labelledby="plan-pro">
-        <div class="plan-name" id="plan-pro" data-i18n="plan3.name">🏆 Palma Pro</div>
-        <div class="plan-price" data-i18n="plan3.price">Custom <span>/month</span></div>
-        <div class="plan-hectares" data-i18n="plan3.ha">50+ hectares · Enterprise</div>
-        <div class="plan-trial">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span data-i18n="plan.trial">30-day free trial</span>
-        </div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features" role="list">
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f1">Unlimited IoT nodes</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f2">All Cosecha features</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f3">Dedicated agronomic advisor</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f4">Custom API integration & webhooks</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f5">SLA 99.9% with priority support</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f6">Multi-cooperative management</span></li>
-        </ul>
-        <a href="#" class="btn btn-secondary" style="width:100%; justify-content:center;" data-i18n="plan3.cta">Contact Sales</a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     ABOUT THE TEAM
-============================ -->
-<section class="section" id="team" aria-labelledby="team-heading">
-  <div class="container">
-    <div style="text-align:center; max-width:640px; margin:0 auto;" data-animate>
-      <p class="section-label" data-i18n="team.label">Meet the Team</p>
-      <h2 id="team-heading" data-i18n="team.title">Built by Software Engineering students at UPC</h2>
-      <p data-i18n="team.desc">TempWise is a student startup from Universidad Peruana de Ciencias Aplicadas (UPC). We are six software engineers passionate about AgTech, IoT, and sustainable agriculture in Peru.</p>
-    </div>
-
-    <div class="team-grid" role="list" aria-label="Team members" data-animate>
-
-      <article class="team-card" role="listitem">
-        <!-- <div class="avatar avatar-1" aria-hidden="true">VR</div> -->
-        <img class="avatar avatar-1" aria-hidden="true" src="img/victor.jpg" alt="Victor Manuel Rojas Reategui">
-        <h4>Victor Manuel Rojas Reategui</h4>
-        <p class="role" data-i18n="team.role">Software Engineer · UPC</p>
-      </article>
-
-      <article class="team-card" role="listitem">
-        <!-- <div class="avatar avatar-2" aria-hidden="true">RJ</div> -->
-        <img class="avatar avatar-2" aria-hidden="true" src="img/renso.png" alt="Renso Anthony Julca Cruz">
-        <h4>Renso Anthony Julca Cruz</h4>
-        <p class="role" data-i18n="team.role">Software Engineer · UPC</p>
-      </article>
-
-      <article class="team-card" role="listitem">
-        <!-- <div class="avatar avatar-3" aria-hidden="true">JP</div> -->
-        <img class="avatar avatar-3" aria-hidden="true" src="img/jeremy.jpeg" alt="Jeremy Alión Paucar Meneses">
-        <h4>Jeremy Alión Paucar Meneses</h4>
-        <p class="role" data-i18n="team.role">Software Engineer · UPC</p>
-      </article>
-
-      <article class="team-card" role="listitem">
-        <!-- <div class="avatar avatar-4" aria-hidden="true">RL</div> -->
-        <img class="avatar avatar-4" aria-hidden="true" src="img/renzo.jpeg" alt="Renzo Javier Loli Ruiz">
-        <h4>Renzo Javier Loli Ruiz</h4>
-        <p class="role" data-i18n="team.role">Software Engineer · UPC</p>
-      </article>
-
-      <article class="team-card" role="listitem">
-        <!-- <div class="avatar avatar-5" aria-hidden="true">JT</div> -->
-        <img class="avatar avatar-5" aria-hidden="true" src="img/javier.jpg" alt="Javier Oswaldo Tello Murga">
-        <h4>Javier Oswaldo Tello Murga</h4>
-        <p class="role" data-i18n="team.role">Software Engineer · UPC</p>
-      </article>
-
-      <article class="team-card" role="listitem">
-        <!-- <div class="avatar avatar-6" aria-hidden="true">SC</div> -->
-        <img class="avatar avatar-6" aria-hidden="true" src="img/sebastian.jpeg" alt="Sebastian Carbajal Santivañez">
-        <h4>Sebastian Carbajal Santivañez</h4>
-        <p class="role" data-i18n="team.role">Software Engineer · UPC</p>
-      </article>
-
-    </div>
-
-    <!-- Team video -->
-    <div style="max-width:800px; margin:0 auto;" data-animate>
-      <h3 style="font-family:var(--font-display); text-align:center; margin-bottom:24px; color:var(--green-900);" data-i18n="team.video.title">Meet us in person 👋</h3>
-      <div class="video-container" aria-label="TempWise team introduction video">
-        <!--
-          =============================================
-          TEAM VIDEO PLACEHOLDER
-          Replace the div below with an <iframe> from
-          YouTube or Microsoft Stream, for example:
-          <iframe src="https://www.youtube.com/embed/YOUR_TEAM_VIDEO_ID"
-                  title="TempWise Team Introduction"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-          =============================================
-        -->
-        <div class="video-placeholder" role="img" aria-label="Team video placeholder">
-          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z"/></svg>
-          <p>🎓 <span data-i18n="video.team.placeholder">TempWise Team Introduction Video</span><br/><small>Insert YouTube/Stream iframe here</small></p>
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/sebastian.jpeg" alt="Sebastian Carbajal">
+          </div>
+          <h4 class="team-name">Sebastian Carbajal</h4>
+          <p class="team-role">Ingeniero de Software - UPC</p>
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-
-
+  </section>
 </main>
+
 <!-- ============================
-
-   FOOTER
-
+     FOOTER
 ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">🌴 SmartPalm</div>
+        <p>Digitalizando el corazón de la Amazonía para un futuro sostenible y productivo.</p>
+        <div class="footer-cta">
+          <a href="#" class="btn btn-amber btn-lg" data-i18n="footer.cta.button.farmer">📱 Descargar App</a>
+        </div>
+      </div>
 
-<footer class="footer" role="contentinfo" aria-label="Site footer">
- <div class="container">
-  <div class="footer-grid">
-   <div class="footer-brand">
-    <a href="#" class="logo" aria-label="SmartPalm Home" style="color:var(--white);">
-     <div class="logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-       <path d="M12 22C12 22 3 17 3 10a9 9 0 0 1 18 0c0 7-9 12-9 12z"/>
-       <path d="M12 22V10"/>
-      </svg>
-     </div>
-     SmartPalm
-    </a>
-    <p data-i18n="footer.brand.desc">IoT precision agriculture for palm oil cultivation in the Peruvian Amazon. By TempWise · UPC Software Engineering.</p>
-   </div>
-   <div class="footer-col">
-    <h5 data-i18n="footer.product">Product</h5>
-    <ul class="footer-links" role="list">
-     <li><a href="#benefits" data-i18n="nav.benefits">Benefits</a></li>
-     <li><a href="#segments" data-i18n="nav.segments">Segments</a></li>
-     <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
-    </ul>
-   </div>
-   <div class="footer-col">
-    <h5 data-i18n="footer.company">Company</h5>
-    <ul class="footer-links" role="list">
-     <li><a href="#team"  data-i18n="nav.team">Team</a></li>
-     <li><a href="#about" data-i18n="footer.about">About</a></li>
-     <li><a href="mailto:">Contact</a></li>
-    </ul>
-   </div>
-   <div class="footer-col">
-    <h5 data-i18n="footer.legal">Legal</h5>
-    <ul class="footer-links" role="list">
-     <!-- TERMS & CONDITIONS - Required link -->
-     <li><a href="#" class="tos" aria-label="View Terms of Service" data-i18n="footer.tos">📋 Terms of Service</a></li>
-     <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
-     <li><a href="#" data-i18n="footer.cookies">Cookie Policy</a></li>
-    </ul>
-   </div>
+      <div class="footer-nav">
+        <h5 data-i18n="footer.nav.title">Enlaces</h5>
+        <nav>
+          <a href="#inicio" data-i18n="nav.inicio">Inicio</a>
+          <a href="#problema" data-i18n="nav.problema">Problema</a>
+          <a href="#como-funciona" data-i18n="nav.como-funciona">Cómo funciona</a>
+          <a href="#beneficios" data-i18n="nav.beneficios">Beneficios</a>
+          <a href="#planes" data-i18n="nav.planes">Planes</a>
+          <a href="#nosotros" data-i18n="nav.equipo">Nosotros</a>
+        </nav>
+      </div>
+
+      <div class="footer-social">
+        <h5 data-i18n="footer.follow">Síguenos</h5>
+        <nav>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">YouTube</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 TempWise S.A.C. · Lima, Perú</p>
+      <div class="footer-legal-links">
+        <a href="#" data-i18n="footer.privacy">Privacidad</a>
+        <a href="#" data-i18n="footer.terms">Términos</a>
+      </div>
+    </div>
   </div>
-  <div class="footer-bottom">
-   <p>© 2026 TempWise S.A.C. · SmartPalm® · Lima, Perú · <span data-i18n="footer.rights">All rights reserved.</span></p>
-   <div class="social-links" role="list" aria-label="Social media links">
-    <a href="#" class="social-link" aria-label="SmartPalm on LinkedIn" role="listitem">
-     <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-    </a>
-    <a href="#" class="social-link" aria-label="SmartPalm on Instagram" role="listitem">
-     <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
-    </a>
-    <a href="#" class="social-link" aria-label="SmartPalm on X / Twitter" role="listitem">
-     <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
-    <a href="#" class="social-link" aria-label="SmartPalm on YouTube" role="listitem">
-     <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
-    </a>
-   </div>
-  </div>
- </div>
 </footer>
+
+<!-- ============================
+     MODAL - CONTACTAR VENTAS
+============================ -->
+<div class="modal-overlay" id="salesModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeSalesModal()" aria-label="Cerrar">×</button>
+    <div class="modal-header">
+      <h3 data-i18n="modal.contact.title">Hablar con ventas</h3>
+      <p data-i18n="modal.contact.subtitle">Cuéntanos sobre tu fundo y te ayudaremos a elegir el mejor plan</p>
+    </div>
+    <form class="contact-form" id="salesForm" onsubmit="handleSalesSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="sales-nombre" data-i18n="modal.contact.field1">Nombre completo</label>
+          <input type="text" id="sales-nombre" name="nombre" required placeholder="Ej: Juan Pérez" data-i18n-placeholder="modal.contact.field1.placeholder">
+        </div>
+        <div class="form-group">
+          <label for="sales-whatsapp" data-i18n="modal.contact.field2">WhatsApp</label>
+          <input type="tel" id="sales-whatsapp" name="whatsapp" required placeholder="+51 999 123 456" pattern="\+51\s?\d{3}\s?\d{3}\s?\d{3}">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="sales-ubicacion" data-i18n="modal.contact.field3">Ubicación del fundo</label>
+          <input type="text" id="sales-ubicacion" name="ubicacion" required placeholder="Ej: Ucayali, Aguaytía" data-i18n-placeholder="modal.contact.field3.placeholder">
+        </div>
+        <div class="form-group">
+          <label for="sales-hectareas" data-i18n="modal.contact.field4">Número de hectáreas</label>
+          <input type="number" id="sales-hectareas" name="hectareas" required min="1" placeholder="Ej: 25">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="sales-primeravez" data-i18n="modal.contact.field5">¿Ya tienes sensores o es primera vez?</label>
+        <select id="sales-primeravez" name="primeravez">
+          <option value="primera_vez" data-i18n="modal.contact.field5.opt1">Primera vez con tecnología de monitoreo</option>
+          <option value="ya_tengo" data-i18n="modal.contact.field5.opt2">Ya tengo sensores pero quiero mejorar</option>
+          <option value="ns" data-i18n="modal.contact.field5.opt3">No estoy seguro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sales-mensaje" data-i18n="modal.contact.field6">Cuéntanos más sobre tu fundo (opcional)</label>
+        <textarea id="sales-mensaje" name="mensaje" rows="3" placeholder="Ej: Tengo 3 bloques de palma aceitera en Ucayali..." data-i18n-placeholder="modal.contact.field6.placeholder"></textarea>
+      </div>
+      <button type="submit" class="btn btn-amber btn-block btn-lg" data-i18n="modal.contact.submit">📱 Enviar por WhatsApp</button>
+      <p class="form-note" data-i18n="modal.contact.note">Te responderemos en menos de 24 horas</p>
+    </form>
+    <div class="modal-success" id="salesSuccess" style="display:none;">
+      <div class="success-icon">✅</div>
+      <h4 data-i18n="modal.contact.success.title">¡Mensaje enviado!</h4>
+      <p data-i18n="modal.contact.success.msg">Te contactaremos por WhatsApp en menos de 24 horas.</p>
+      <button class="btn btn-secondary" onclick="closeSalesModal()" data-i18n="modal.contact.success.close">Cerrar</button>
+    </div>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>
