@@ -20,6 +20,10 @@ const translations = {
     "nav.beneficios": "Beneficios",
     "nav.planes": "Planes",
     "nav.equipo": "Nosotros",
+    "nav.agronomo": "Agrónomo",
+    "nav.agricultor": "Agricultor",
+    "nav.badge.farmer": "🌴 Para Agricultores",
+    "nav.badge.agronomist": "🔬 Para Agrónomos",
 
     /* Hero - Home */
     "hero.badge": "🌴 Solución para la palma aceitera en la Amazonía",
@@ -312,7 +316,11 @@ const translations = {
     "nav.sectores": "Segments",
     "nav.beneficios": "Benefits",
     "nav.planes": "Plans",
-    "nav.equipo": "Us",
+    "nav.equipo": "About",
+    "nav.agronomo": "Agronomist",
+    "nav.agricultor": "Farmer",
+    "nav.badge.farmer": "🌴 For Farmers",
+    "nav.badge.agronomist": "🔬 For Agronomists",
 
     /* Hero - Home */
     "hero.badge": "🌴 Solution for palm oil in the Peruvian Amazon",
